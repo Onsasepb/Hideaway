@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1084689806303",
+    "project_id": "hideaway-dd7ee",
+    "storage_bucket": "hideaway-dd7ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084689806303:android:46b73c562c209bcf3b8a6a",
+        "android_client_info": {
+          "package_name": "com.example.hideaway"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUW99sWWcHTpa4CLhVLBODnD1wnXm42h8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
