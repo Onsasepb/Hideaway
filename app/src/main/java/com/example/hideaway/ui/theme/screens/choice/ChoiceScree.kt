@@ -1,4 +1,4 @@
-package com.example.hideaway.ui.theme.screens.choice
+package com.example.hideawayapplication.ui.theme.screens.choice
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -18,15 +18,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.hideaway.R
 import com.example.hideaway.navigation.ADD_PATIENTS_URL
 import com.example.hideaway.navigation.HOME_URL
-import com.example.hideaway.navigation.LOGIN_URL
-import com.example.hideaway.navigation.MENU_URL
+import com.example.hideaway.ui.theme.HideawayTheme
 import com.example.hideaway.ui.theme.Purple40
+import com.example.hideaway.ui.theme.screens.home.HomeScreen
 
 @Composable
 fun ChoiceScreen(navController: NavHostController) {
@@ -49,14 +51,14 @@ fun ChoiceScreen(navController: NavHostController) {
         )
         Spacer(modifier = Modifier.height(20.dp))
         Text(text = "LOGIN AS:",
-            fontSize = 30.sp,
+            fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.Cursive,
-            color = Purple40,
+            color = Color.White,
             textAlign = TextAlign.Center,
-            modifier = Modifier.padding(start = 90.dp, top = 450.dp))
+            modifier = Modifier.padding(start = 140.dp, top = 350.dp))
 
-
+Spacer(modifier = Modifier.height(20.dp))
         Text(text = "PATIENT",
             fontFamily = FontFamily.Cursive,
             fontSize = 40.sp,
@@ -72,7 +74,7 @@ fun ChoiceScreen(navController: NavHostController) {
                 textAlign = TextAlign.Center,
                 color = Color.White,
                 fontSize = 30.sp,
-                modifier = Modifier.padding(start = 175.dp))
+                modifier = Modifier.padding(start = 195.dp))
             Spacer(modifier = Modifier.height(10.dp))
         Text(text = "DOCTOR",
             fontFamily = FontFamily.Cursive,
@@ -88,4 +90,11 @@ fun ChoiceScreen(navController: NavHostController) {
     }
 
 
+}
+@Composable
+@Preview(showBackground = true)
+fun ChoiceScreenPreview(){
+    HideawayTheme {
+        ChoiceScreen(navController = rememberNavController())
+    }
 }

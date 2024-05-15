@@ -28,16 +28,15 @@ import androidx.navigation.compose.rememberNavController
 import com.example.hideaway.R
 import com.example.hideaway.navigation.MENU_URL
 import com.example.hideaway.ui.theme.HideawayTheme
+import com.example.hideaway.ui.theme.Purple40
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController:NavHostController) {
     Column(
         modifier = Modifier
-            .horizontalScroll(rememberScrollState())
-            .verticalScroll(rememberScrollState())
             .paint(
-                painterResource(id = R.drawable.project1),
+                painterResource(id = R.drawable.safef),
                 contentScale = ContentScale.FillBounds
             )
             .fillMaxSize()
@@ -47,10 +46,10 @@ fun HomeScreen(navController:NavHostController) {
 
         Text(
             text = "Home",
-            fontSize = 40.sp,
+            fontSize = 60.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.Cursive,
-            color = Color.Black,
+            color = Purple40,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(start = 135.dp)
         )
@@ -59,11 +58,13 @@ fun HomeScreen(navController:NavHostController) {
         },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 30.dp, end = 30.dp)) {
+                .padding(start = 30.dp, end = 30.dp, top = 600.dp)
+        ) {
             Text(text = "MENU",
-                color = Color.Black,
+                color = Purple40,
                 fontWeight = FontWeight.Bold)
         }
+
 
 
 //

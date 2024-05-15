@@ -1,4 +1,4 @@
-package com.example.hideaway.ui.theme.screens.gratitude
+package com.example.hideawayapplication.ui.theme.screens.gratitude
 
 import android.content.Intent
 import android.net.Uri
@@ -16,6 +16,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -46,7 +47,7 @@ fun Gratitude(navController: NavController) {
             .fillMaxSize()
             .horizontalScroll(rememberScrollState())
             .verticalScroll(rememberScrollState())
-            .background(Purple40)
+            .background(color = Purple40)
 
     ) {
         val mContext = LocalContext.current
@@ -63,7 +64,7 @@ fun Gratitude(navController: NavController) {
     }}
 
 
-@OptIn(ExperimentalComposeUiApi::class)
+@OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun NoteScreen() {
     val noteText = remember { mutableStateOf("") }
@@ -91,7 +92,7 @@ fun NoteScreen() {
                 }
             ),
             label = { Text("I AM GRACIOUS FOR;",
-               fontFamily = FontFamily.Cursive,
+                fontFamily = FontFamily.Cursive,
                 fontWeight = FontWeight.ExtraBold)}
         )
         Spacer(modifier = Modifier.height(16.dp))

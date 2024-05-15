@@ -5,6 +5,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavHostController
 import com.example.hideaway.models.User
+import com.example.hideaway.navigation.ADD_PATIENTS_URL
 import com.example.hideaway.navigation.CHOICE_URL
 import com.example.hideaway.navigation.HOME_URL
 import com.example.hideaway.navigation.LOGIN_URL
@@ -33,7 +34,7 @@ class AuthViewModel(var navController:NavHostController, var context:Context) {
                 progress.dismiss()
                 if (it.isSuccessful){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                    navController.navigate(LOGIN_URL)
+                    navController.navigate(HOME_URL)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }
@@ -47,7 +48,7 @@ class AuthViewModel(var navController:NavHostController, var context:Context) {
             progress.dismiss()
             if (it.isSuccessful){
                 Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                navController.navigate(CHOICE_URL)
+                navController.navigate(HOME_URL)
             }else{
                 Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
             }

@@ -37,4 +37,12 @@ fun Chat(navController: NavController) {
             modifier = Modifier.padding(start = 135.dp)
         )
     }
+
+
+
+
+
+
+
+
 }

@@ -18,7 +18,6 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -31,12 +30,18 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.hideaway.navigation.CONTACT_URL
 import com.example.hideaway.navigation.HOME_URL
 import com.example.hideaway.navigation.MOOD_URL
-import com.example.wazitoecommerce.ui.theme.Purple40
+import com.example.hideaway.navigation.OTHER_URL
+import com.example.hideaway.navigation.STRATEGIES_URL
+import com.example.hideaway.navigation.WARNINGS_URL
+import com.example.hideaway.ui.theme.Purple40
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -50,7 +55,7 @@ fun Safety(navController: NavController) {
 
         TopAppBar(title = { Text(text = "Safety Plan",
             color = Purple40,
-            fontFamily = FontFamily.Cursive,
+            fontFamily  = FontFamily.Cursive,
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
@@ -72,44 +77,43 @@ fun Safety(navController: NavController) {
                     )
                 }
             }
-             )
+        )
         Spacer(modifier = Modifier.height(10.dp))
         //code for card colors (colors = CardDefaults.cardColors(containerColor = Color.Gray))
 
-                Row(modifier = Modifier
-                    .height(120.dp)
-                    .fillMaxSize()
-                    .padding(all = 15.dp)
-                )
-                {
-                    Icon(
-                        imageVector = Icons.Default.Warning,
-                        contentDescription = "warning",
-                        tint = Purple40,
-                        modifier = Modifier
-                            .size(60.dp)
-                            .clickable { navController.navigate(MOOD_URL) }
+        Row(modifier = Modifier
+            .height(120.dp)
+            .fillMaxSize()
+            .padding(all = 15.dp)
+        )
+        {
+            Icon(
+                imageVector = Icons.Default.Warning,
+                contentDescription = "warning",
+                tint = Purple40,
+                modifier = Modifier
+                    .size(60.dp)
+                    .clickable { navController.navigate(WARNINGS_URL) }
+            )
+            Spacer(modifier = Modifier.width(25.dp))
+            Column {
+                Text(
+                    text = "Warning Signs",
+                    fontSize = 30.sp,
+                    modifier = Modifier.padding(
+                        start = 15.dp,
+                        end = 15.dp,
+                        top = 10.dp,
+                        bottom = 10.dp
                     )
-                    Spacer(modifier = Modifier.width(25.dp))
-                    Column {
-                        Text(
-                            text = "Warning Signs",
-                            fontSize = 30.sp,
-                            modifier = Modifier.padding(
-                               start = 15.dp,
-                                end = 15.dp,
-                                top = 10.dp,
-                                bottom = 10.dp
-                            )
-                        )
-                        Text(text = "Add Warning signs that a crisis may occur"
-                            , fontSize = 15.sp)
-                        }
+                )
+
             }
+        }
         Spacer(modifier = Modifier.height(10.dp))
 
-        HorizontalDivider(color = Color.Black,
-            modifier = Modifier.padding(start = 15.dp, end = 15.dp))
+       // HorizontalDivider(color = Color.Black,
+          //  modifier = Modifier.padding(start = 15.dp, end = 15.dp))
         //end of section
         Spacer(modifier = Modifier.height(10.dp))
 
@@ -125,7 +129,7 @@ fun Safety(navController: NavController) {
                 tint = Purple40,
                 modifier = Modifier
                     .size(60.dp)
-                    .clickable { navController.navigate(MOOD_URL) }
+                    .clickable { navController.navigate(STRATEGIES_URL) }
             )
             Spacer(modifier = Modifier.width(25.dp))
             Column {
@@ -139,14 +143,13 @@ fun Safety(navController: NavController) {
                         bottom = 10.dp
                     )
                 )
-                Text(text = "Add Coping Strategies in case of a crisis "
-                    , fontSize = 15.sp)
-                }
+
+            }
         }
         Spacer(modifier = Modifier.height(10.dp))
 
-        HorizontalDivider(color = Color.Black,
-            modifier = Modifier.padding(start = 15.dp, end = 15.dp))
+       // HorizontalDivider(color = Color.Black,
+           // modifier = Modifier.padding(start = 15.dp, end = 15.dp))
         //end of section
         Spacer(modifier = Modifier.height(10.dp))
         Row(modifier = Modifier
@@ -161,12 +164,12 @@ fun Safety(navController: NavController) {
                 tint = Purple40,
                 modifier = Modifier
                     .size(60.dp)
-                    .clickable { navController.navigate(MOOD_URL) }
+                    .clickable { navController.navigate(CONTACT_URL) }
             )
             Spacer(modifier = Modifier.width(25.dp))
             Column {
                 Text(
-                    text = "Contacts",
+                    text = "Contacts us",
                     fontSize = 30.sp,
                     modifier = Modifier.padding(
                         start = 15.dp,
@@ -175,16 +178,15 @@ fun Safety(navController: NavController) {
                         bottom = 10.dp
                     )
                 )
-                Text(text = "Add people you can contact if a crisis may occur "
-                    , fontSize = 15.sp)
-                 }
+
+            }
         }
         Spacer(modifier = Modifier.height(10.dp))
 
-        HorizontalDivider(color = Color.Black,
-            modifier = Modifier.padding(start = 15.dp, end = 15.dp))
+     //   HorizontalDivider(color = Color.Black,
+        //    modifier = Modifier.padding(start = 15.dp, end = 15.dp))
         //end of section
-        Spacer(modifier = Modifier.height(10.dp))
+       /* Spacer(modifier = Modifier.height(10.dp))
         Row(modifier = Modifier
             .height(120.dp)
             .fillMaxSize()
@@ -197,7 +199,7 @@ fun Safety(navController: NavController) {
                 tint = Purple40,
                 modifier = Modifier
                     .size(60.dp)
-                    .clickable { navController.navigate(MOOD_URL) }
+                    .clickable { navController.navigate(OTHER_URL) }
             )
             Spacer(modifier = Modifier.width(25.dp))
             Column {
@@ -213,13 +215,13 @@ fun Safety(navController: NavController) {
                 )
                 Text(text = "Add any additional notes that could be helpful"
                     , fontSize = 15.sp)
-                    }
+            }
         }
         Spacer(modifier = Modifier.height(10.dp))
 
-        HorizontalDivider(color = Color.Black,
-            modifier = Modifier.padding(start = 15.dp, end = 15.dp))
-        //end of section
+       // HorizontalDivider(color = Color.Black,
+       //     modifier = Modifier.padding(start = 15.dp, end = 15.dp))
+        //end of section*/
         Spacer(modifier = Modifier.height(10.dp))
 
 
@@ -231,4 +233,9 @@ fun Safety(navController: NavController) {
 
 
     }
+}
+@Preview
+@Composable
+fun SafetyScreenPreview(){
+    Safety(navController = rememberNavController())
 }

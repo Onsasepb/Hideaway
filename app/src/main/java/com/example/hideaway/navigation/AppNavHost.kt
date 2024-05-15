@@ -6,20 +6,24 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.hideaway.ui.theme.screens.chat.Chat
-import com.example.hideaway.ui.theme.screens.choice.ChoiceScreen
-import com.example.hideaway.ui.theme.screens.gratitude.Gratitude
 import com.example.hideaway.ui.theme.screens.home.HomeScreen
 import com.example.hideaway.ui.theme.screens.login.LoginScreen
-import com.example.hideaway.ui.theme.screens.menu.Menu
-import com.example.hideaway.ui.theme.screens.mood.MoodScreen
 import com.example.hideaway.ui.theme.screens.patients.AddPatientsScreen
 import com.example.hideaway.ui.theme.screens.patients.ViewPatientsScreen
-import com.example.hideaway.ui.theme.screens.safety.Safety
 import com.example.hideaway.ui.theme.screens.signup.SignupScreen
 import com.example.hideaway.ui.theme.screens.splash.Splash
 import com.example.hideaway.ui.theme.screens.strengths.Strength
 import com.example.hideaway.ui.theme.screens.thought.Thought
+import com.example.hideaway.ui.theme.screens.chat.Chat
+import com.example.hideaway.ui.theme.screens.other.Other
+import com.example.hideawayapplication.ui.theme.screens.choice.ChoiceScreen
+import com.example.hideaway.ui.theme.screens.contact.Contact
+import com.example.hideawayapplication.ui.theme.screens.gratitude.Gratitude
+import com.example.hideaway.ui.theme.screens.menu.Menu
+import com.example.hideawayapplication.ui.theme.screens.mood.MoodScreen
+import com.example.hideaway.ui.theme.screens.safety.Safety
+import com.example.hideaway.ui.theme.screens.strategies.Strategies
+import com.example.hideawayapplication.ui.theme.screens.warning.Warnings
 
 @Composable
 fun AppNavHost(
@@ -75,7 +79,18 @@ fun AppNavHost(
         composable(CHOICE_URL){
             ChoiceScreen(navController = navController)
         }
-
+        composable(WARNINGS_URL){
+            Warnings(navController = navController)
+        }
+        composable(STRATEGIES_URL){
+            Strategies(navController = navController)
+        }
+        composable(OTHER_URL){
+            Other(navController = navController)
+        }
+        composable(CONTACT_URL){
+            Contact(navController = navController)
+        }
 
     }
 }

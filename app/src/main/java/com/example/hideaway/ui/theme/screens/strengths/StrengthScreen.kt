@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -35,8 +36,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.wazitoecommerce.ui.theme.Purple40
-import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
+import com.example.hideaway.ui.theme.HideawayTheme
+import com.example.hideaway.ui.theme.Purple40
 
 @Composable
 fun Strength(navController: NavController) {
@@ -62,6 +63,7 @@ fun Strength(navController: NavController) {
     }}
 
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun NoteScreen() {
     val noteText = remember { mutableStateOf("") }
@@ -107,7 +109,7 @@ fun NoteScreen() {
 @Composable
 @Preview(showBackground = true)
 fun GratitudeScreenPreview(){
-    WazitoECommerceTheme {
+    HideawayTheme {
         Strength(navController = rememberNavController())
         NoteScreen()
 

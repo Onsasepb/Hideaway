@@ -25,10 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import coil.compose.rememberAsyncImagePainter
+//import coil.compose.rememberAsyncImagePainter
 import com.example.hideaway.data.PatientViewModel
 import com.example.hideaway.models.Patient
-import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
+import com.example.hideaway.ui.theme.HideawayTheme
 
 
 @Composable
@@ -85,11 +85,11 @@ fun PatientItem(name:String, age:String, progres:String, id:String,
         Text(text = name)
         Text(text = age)
         Text(text = progres)
-        Image(
+        /*Image(
             painter = rememberAsyncImagePainter(patientImage),
             contentDescription = null,
             modifier = Modifier.size(250.dp)
-        )
+        )*/
         Button(onClick = {
             patientRepository.deletePatient(id)
         }) {
@@ -106,7 +106,7 @@ fun PatientItem(name:String, age:String, progres:String, id:String,
 @Composable
 @Preview(showBackground = true)
 fun ViewPatientsScreenPreview(){
-    WazitoECommerceTheme {
+    HideawayTheme {
         ViewPatientsScreen(navController = rememberNavController())
     }
 }
